@@ -820,7 +820,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     script.Comment("Stage 3/3")
 
   # Dump fingerprints
-  script.Print("Installing dotOS on {}. Hang On!".format(target_info.GetBuildProp("ro.build.product")))
+  script.Print("Installing dotOS-FE on {}. Hang On!".format(target_info.GetBuildProp("ro.build.product")))
 
   script.Print("***********************************************")
   script.Print("*    .___          __   ________     _________*")
@@ -828,16 +828,16 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print("* / __ |  /  _ \ \   __\ /   |   \  \_____  \ *")
   script.Print("*/ /_/ | (  <_> ) |  |  /    |    \ /        \*")
   script.Print("*\____ |  \____/  |__|  \_______  //_______  /*")
-  script.Print("*     \/   ***Droid On Time***  \/         \/ *")
+  script.Print("*     \/   ***Droid On Time-FE***  \/         \/ *")
   script.Print("***********************************************")
   script.Print("**************|*Based On AOSP*|****************")
   script.Print("***********************************************")
   script.AppendExtra("sleep (2);")
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
   script.Print("Device : {}".format(target_info.GetBuildProp("ro.product.system.model")))
-  script.Print("DotOS version: {}".format(target_info.GetBuildProp("ro.modversion")))
+  script.Print("DotOS-FE version: {}".format(target_info.GetBuildProp("ro.modversion")))
   script.Print("Android version : {}".format(target_info.GetBuildProp("ro.build.version.release")))
-  script.Print("Build type: {}".format(target_info.GetBuildProp("ro.dot.releasetype")))
+  script.Print("Build type: {}".format(target_info.GetBuildProp("ro.dotfe.releasetype")))
   script.Print("Build fingerprint: {}".format(target_info.fingerprint))
   script.Print("Security patch : {}".format(target_info.GetBuildProp("ro.build.version.security_patch")))
   device_specific.FullOTA_InstallBegin()
